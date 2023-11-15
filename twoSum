@@ -1,0 +1,26 @@
+# O(n) solution for Two Sum Leetcode problem using a Hash Table
+
+# Overview- if I know the target and have a number, I can search for the difference of those 2 numbers in the list.
+# This will prove that I have a pair of numbers that will equal the target.
+
+# Code Explanation: 
+# Initialize an empty dictionary [hash table] that will hold the numbers from the array that have been checked.
+  # The dictionary Key will be the number, and the dictionary Value will be the index.
+# Iterate through the indices in the 'nums' list.
+# Calculate the difference by subtracting 'nums' from 'target'.
+# If the difference is found in the tracker, return the indices of both the dictionary value of the number and the current index which is 'i'.
+# If the difference is NOT found in the tracker, add the key value pair into the empty dictionary. 
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        tracker = {}
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in tracker:
+                return tracker[diff], i
+            else:
+                tracker[nums[i]] = i
+
+
+
+
