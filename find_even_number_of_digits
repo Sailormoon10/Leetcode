@@ -1,0 +1,18 @@
+# 1295. Find Numbers with Even Number of Digits
+
+# Here is another solution that I cam up with for Leetcode # 1295
+
+# The task is to count how many numbers have an even amount of digits and return the amount. 
+# For example in the list [232, 34, 21, 10], we would return 3.
+# The goal is to find the length of each number by turning it into a string, because the len function does not work on type int!
+# Next, we see if the length is even by seeing if it has a reminder when divided by 2. 
+# If the number has an even length, add it to the counter variable and return it. 
+
+
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        count = 0
+        for number in nums:
+            if len(str(number)) % 2 == 0:
+                count += 1
+        return count
