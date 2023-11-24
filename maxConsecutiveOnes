@@ -1,0 +1,15 @@
+#If line 9 goes below line 10, the program would clear before having the chance to track the max number of ones.
+
+def findMaxConsecutiveOnes(list1):
+    count = maxCount = 0
+    for number in list1:
+        if number == 1:
+            count += 1
+        else:
+            maxCount = max(count, maxCount)
+            count = 0
+
+    return max(count, maxCount)
+
+
+print(findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1, 0, 1, 1]))
